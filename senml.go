@@ -56,6 +56,11 @@ type Record struct {
 	Sum *float64 `json:"s,omitempty"  xml:"s,attr,omitempty" cbor:"5,keyasint,omitempty"`
 }
 
+// HasValue checks if a Record has any of the value types set.
+func (r *Record) HasValue() bool {
+	return r.Value != nil || r.BoolValue != nil || r.StringValue != ""
+}
+
 // Normalize converts the SenML Pack to to the resolved format according to:
 // https://tools.ietf.org/html/rfc8428#section-4.6
 //
