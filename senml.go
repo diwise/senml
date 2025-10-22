@@ -56,7 +56,7 @@ type Record struct {
 	Sum *float64 `json:"s,omitempty"  xml:"s,attr,omitempty" cbor:"5,keyasint,omitempty"`
 }
 
-// HasValue checks if a Record have any of the value types set
+// HasValue checks if a Record has any of the value types set.
 func (r *Record) HasValue() bool {
 	return r.Value != nil || r.BoolValue != nil || r.StringValue != ""
 }
